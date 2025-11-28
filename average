@@ -1,0 +1,31 @@
+#!/usr/bin/python3
+# SPDX-FileCopyrightText: 2025 YukiKobayashi
+# SPDX-License-Identifier: BSD-3-Clause
+
+import sys
+
+def main():
+    args = sys.argv[1:]
+
+    # 引数がない場合
+    if not args:
+        print("Usage: avg.py number1 number2 ...")
+        print("Error: No numbers provided.")
+        return
+
+    total = 0.0
+    count = 0
+
+    for n in args:
+        try:
+            total += float(n)
+            count += 1
+        except ValueError:
+            print(f"Error: '{n}' is not a valid number.")
+            return
+
+    print(total / count)
+
+if __name__ == "__main__":
+    main()
+
