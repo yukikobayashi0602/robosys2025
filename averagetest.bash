@@ -57,4 +57,9 @@ out=$($CMD 1 2 . 3 4)
 [ "$?" = 1 ] || ng ${LINENO}
 [ "${out}" = "" ] || ng ${LINENO}
 
+### - のみを含む ###
+out=$($CMD 1 2 - 3 4)
+[ "$?" = 1 ] || ng ${LINENO}
+[ "${out}" = "" ] || ng ${LINENO}
+
 
