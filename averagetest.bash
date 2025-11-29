@@ -52,4 +52,9 @@ out=$($CMD 1 2 ケ 3 4)
 [ "$?" = 1 ] || ng ${LINENO}
 [ "${out}" = "" ] || ng ${LINENO}
 
+### 小数点のみを含む ###
+out=$($CMD 1 2 . 3 4)
+[ "$?" = 1 ] || ng ${LINENO}
+[ "${out}" = "" ] || ng ${LINENO}
+
 
