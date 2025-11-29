@@ -42,4 +42,9 @@ out=$($CMD 1 2 B 3 4)
 [ "$?" = 1 ] || ng ${LINENO}
 [ "${out}" = "" ] || ng ${LINENO}
 
+### ひらがなを含む ###
+out=$($CMD 1 2 あ 3 4)
+[ "$?" = 1 ] || ng ${LINENO}
+[ "${out}" = "" ] || ng ${LINENO}
+
 
