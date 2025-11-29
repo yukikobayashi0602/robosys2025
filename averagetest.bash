@@ -36,3 +36,10 @@ out=$($CMD -2  -1 1  2)
 out=$($CMD 1 2 a 3 4)
 [ "$?" = 1 ] || ng ${LINENO}
 [ "${out}" = "" ] || ng ${LINENO}
+
+### アルファベット（大文字）を含む ###
+out=$($CMD 1 2 B 3 4)
+[ "$?" = 1 ] || ng ${LINENO}
+[ "${out}" = "" ] || ng ${LINENO}
+
+
