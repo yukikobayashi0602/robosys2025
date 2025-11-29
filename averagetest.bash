@@ -47,4 +47,9 @@ out=$($CMD 1 2 あ 3 4)
 [ "$?" = 1 ] || ng ${LINENO}
 [ "${out}" = "" ] || ng ${LINENO}
 
+### カタカナを含む ###
+out=$($CMD 1 2 ケ 3 4)
+[ "$?" = 1 ] || ng ${LINENO}
+[ "${out}" = "" ] || ng ${LINENO}
+
 
