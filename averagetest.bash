@@ -62,4 +62,9 @@ out=$($CMD 1 2 - 3 4)
 [ "$?" = 1 ] || ng ${LINENO}
 [ "${out}" = "" ] || ng ${LINENO}
 
+### 記号を含む ###
+out=$($CMD 1 2 @ 3 4)
+[ "$?" = 1 ] || ng ${LINENO}
+[ "${out}" = "" ] || ng ${LINENO}
+
 
