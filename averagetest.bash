@@ -67,4 +67,11 @@ out=$($CMD 1 2 @ 3 4)
 [ "$?" = 1 ] || ng ${LINENO}
 [ "${out}" = "" ] || ng ${LINENO}
 
+### 空白のみ（実質引数なし） ###
+out=$($CMD)
+[ "$?" = 1 ] || ng ${LINENO}
+[ "${out}" = "" ] || ng ${LINENO}
+
+[ "$res" = 0 ] && echo OK
+exit $res
 
