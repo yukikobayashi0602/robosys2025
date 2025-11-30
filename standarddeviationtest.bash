@@ -63,4 +63,9 @@ check_error 1 2 - 3 4
 ### "@" ###
 check_error 1 2 @ 3 4
 
+### 引数なし ###
+check_error
 
+
+[ "$res" = 0 ] && echo OK
+exit $res
