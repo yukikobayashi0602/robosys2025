@@ -1,0 +1,33 @@
+#!/usr/bin/python3
+# SPDX-FileCopyrightText: 2025 Kobayashi Yuki
+# SPDX-License-Identifier: BSD-3-Clause
+
+import sys
+import math
+
+# 引数なし → エラー
+if len(sys.argv) <= 1:
+    print("Error: no arguments given", file=sys.stderr)
+    sys.exit(1)
+
+values = []
+
+# 数値変換チェック
+for n in sys.argv[1:]:
+    try:
+        values.append(float(n))
+    except ValueError:
+        print(f"Error: '{n}' is not a valid number", file=sys.stderr)
+        sys.exit(1)
+
+count = len(values)
+ave = sum(values) / count
+
+# 分散（母分散）
+variance = sum((v - ave) ** 2 for v in values) / count
+
+# 標準偏差
+std_dev = math.sqrt(variance)
+
+print(std_dev)
+
