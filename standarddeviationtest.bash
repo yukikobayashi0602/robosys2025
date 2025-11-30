@@ -25,4 +25,8 @@ equal "${out}" "2.0" || ng ${LINENO}
 out=$(./standarddeviation 0 1 2 3)
 equal "${out}" "1.118033988749895" || ng ${LINENO}
 
+### 小数を含む ###
+out=$(./standarddeviation 0.5 1.5 2.5)
+equal "${out}" "0.816496580927726" || ng ${LINENO}
+
 
