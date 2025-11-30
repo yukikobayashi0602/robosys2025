@@ -33,4 +33,19 @@ equal "${out}" "0.816496580927726" || ng ${LINENO}
 out=$(./standarddeviation 1  2.5  3)
 equal "${out}" "0.8498365855987975" || ng ${LINENO}
 
+############################################################
+# 異常系：stdout は空、終了コード 1
+############################################################
+
+check_error() {
+    out=$(./standarddeviation "$@")
+    status=$?
+    [ "$status" = 1 ] || ng ${LINENO}
+    [ -z "${out}" ] || ng ${LINENO}
+}
+
+### 小文字アルファベット ###
+check_error 1 2 a 3 4
+
+
 
