@@ -48,4 +48,7 @@ check_error() {
 check_error 1 2 a 3 4
 
 
+### 大文字アルファベット ###
+check_error 1 2 H 3 4
+
 
