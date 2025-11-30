@@ -29,4 +29,35 @@ out=$(./dispersion 0.5 1.5 2.5)
 out=$(./dispersion 1  2.5  3)
 [ "${out}" = "0.7222222222222222" ] || ng ${LINENO}
 
+### 以下はすべて異常系（エラー終了＋出力なし） ###
 
+check_error() {
+    out=$(./dispersion "$@")
+    status=$?
+    [ "$status" = 1 ] || ng ${LINENO}
+    [ -z "${out}" ] || ng ${LINENO}
+}
+
+### アルファベット（小文字） ###
+check_error 1 2 a 3 4
+
+### アルファベット（大文字） ###
+check_error 1 2 H 3 4
+
+### ひらがな ###
+check_error 1 2 ん 3 4
+
+### カタカナ ###
+check_error 1 2 ン 3 4
+
+### 記号 "-" 単体 ###
+check_error 1 2 - 3 4
+
+### 記号 "@" ###
+check_error 1 2 @ 3 4
+
+### 引数なし ###
+check_error
+
+[ "$res" = 0 ] && echo OK
+exit $res

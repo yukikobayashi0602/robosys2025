@@ -4,8 +4,9 @@
 
 import sys
 
-# 引数なし → エラー終了
+# 引数なし → エラー
 if len(sys.argv) <= 1:
+    print("Error: no arguments given", file=sys.stderr)
     sys.exit(1)
 
 values = []
@@ -15,7 +16,7 @@ for n in sys.argv[1:]:
     try:
         values.append(float(n))
     except ValueError:
-        # 数値でない → 出力せず終了コード 1
+        print(f"Error: '{n}' is not a valid number", file=sys.stderr)
         sys.exit(1)
 
 count = len(values)
