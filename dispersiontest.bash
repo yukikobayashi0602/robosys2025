@@ -21,4 +21,8 @@ out=$(./dispersion -1 3)
 out=$(./dispersion 0 1 2 3)
 [ "${out}" = "1.25" ] || ng ${LINENO}
 
+### 小数を含む ###
+out=$(./dispersion 0.5 1.5 2.5)
+[ "${out}" = "0.6666666666666666" ] || ng ${LINENO}
+
 
