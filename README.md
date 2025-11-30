@@ -9,8 +9,8 @@
 $ seq 10 | ./plus
 55
 
-$ ./plus < numms
--2.2
+$ ./plus < nums
+6
 ```
 
 
