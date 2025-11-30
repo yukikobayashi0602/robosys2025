@@ -16,3 +16,9 @@ equal() {
 ### 正の数字のみ ###
 out=$(./standarddeviation 1 2 3 4)
 equal "${out}" "1.118033988749895" || ng ${LINENO}
+
+### 負の値を含む ###
+out=$(./standarddeviation -1 3)
+equal "${out}" "2.0" || ng ${LINENO}
+
+
