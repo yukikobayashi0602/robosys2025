@@ -1,0 +1,23 @@
+#!/usr/bin/python3
+# SPDX-FileCopyrightText: 2025 Kobayashi Yuki
+# SPDX-License-Identifier: BSD-3-Clause
+
+import sys
+
+# 引数チェック
+if len(sys.argv) <= 1:
+    print("Usage: {} number1 number2 ...".format(sys.argv[0]))
+    sys.exit(1)
+
+# 数値をすべて float に変換してリストに格納
+values = [float(n) for n in sys.argv[1:]]
+count = len(values)
+
+# 平均
+ave = sum(values) / count
+
+# 分散（不偏ではなく母分散）
+variance = sum((v - ave) ** 2 for v in values) / count
+
+print(variance)
+
