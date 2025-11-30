@@ -57,4 +57,7 @@ check_error 1 2 ん 3 4
 ### カタカナ ###
 check_error 1 2 ン 3 4
 
+### "-" 単体 ###
+check_error 1 2 - 3 4
+
 
