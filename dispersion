@@ -4,19 +4,24 @@
 
 import sys
 
-# 引数チェック
+# 引数なし → エラー終了
 if len(sys.argv) <= 1:
-    print("Usage: {} number1 number2 ...".format(sys.argv[0]))
     sys.exit(1)
 
-# 数値をすべて float に変換してリストに格納
-values = [float(n) for n in sys.argv[1:]]
-count = len(values)
+values = []
 
-# 平均
+# 数値変換チェック
+for n in sys.argv[1:]:
+    try:
+        values.append(float(n))
+    except ValueError:
+        # 数値でない → 出力せず終了コード 1
+        sys.exit(1)
+
+count = len(values)
 ave = sum(values) / count
 
-# 分散（不偏ではなく母分散）
+# 分散（母分散）
 variance = sum((v - ave) ** 2 for v in values) / count
 
 print(variance)
