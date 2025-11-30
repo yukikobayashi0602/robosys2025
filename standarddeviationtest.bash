@@ -54,4 +54,7 @@ check_error 1 2 H 3 4
 ### ひらがな ###
 check_error 1 2 ん 3 4
 
+### カタカナ ###
+check_error 1 2 ン 3 4
+
 
