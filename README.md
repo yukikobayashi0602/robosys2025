@@ -97,7 +97,7 @@ $ chmod +x standarddeviation
 
 ## 必要なソフトウェア
 
-* Python（テスト済: ver. 3.8〜3.10）
+* Python（テスト済: ver. 3.9〜3.11）
 
 ## テスト環境
 
