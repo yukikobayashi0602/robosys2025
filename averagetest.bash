@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 # テスト対象コマンド
-CMD="python3 avg.py"
+CMD="./average"
 
 ng () {
     echo "NG at Line $1"
