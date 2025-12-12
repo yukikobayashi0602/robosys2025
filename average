@@ -6,8 +6,8 @@ import sys
 
 # 引数なし
 if len(sys.argv) == 1:
-    print("Usage: avg.py number1 number2 ...")
-    print("Error: No numbers provided.")
+    print("Usage: avg.py number1 number2 ...", file=sys.stderr)
+    print("Error: No numbers provided.", file=sys.stderr)
     sys.exit(1)
 
 total = 0.0
@@ -18,8 +18,7 @@ for arg in sys.argv[1:]:
         total += float(arg)
         count += 1
     except ValueError:
-        print(f"Error: '{arg}' is not a valid number.")
+        print(f"Error: '{arg}' is not a valid number.", file=sys.stderr)
         sys.exit(1)
 
-# 平均を計算
 print(total / count)
