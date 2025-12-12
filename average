@@ -4,28 +4,23 @@
 
 import sys
 
-def main():
-    args = sys.argv[1:]
+# 引数がない場合
+if len(sys.argv) == 1:
+    print("Usage: average number1 number2 ...", file=sys.stderr)
+    print("Error: No numbers provided.", file=sys.stderr)
+    sys.exit(1)
 
-    # 引数がない場合
-    if not args:
-        print("Usage: avg.py number1 number2 ...")
-        print("Error: No numbers provided.")
-        return
+nums = []
 
-    total = 0.0
-    count = 0
+for a in sys.argv[1:]:
+    try:
+        nums.append(float(a))
+    except ValueError:
+        print(f"Error: '{a}' is not a valid number.", file=sys.stderr)
+        sys.exit(1)
 
-    for n in args:
-        try:
-            total += float(n)
-            count += 1
-        except ValueError:
-            print(f"Error: '{n}' is not a valid number.")
-            return
+# 平均を計算
+avg = sum(nums) / len(nums)
 
-    print(total / count)
-
-if __name__ == "__main__":
-    main()
-
+# 標準出力へ結果を出す（OK）
+print(avg)
