@@ -4,28 +4,27 @@
 
 import sys
 
-<<<<<<< HEAD
-# 引数が無い場合
-=======
 # 引数なし
->>>>>>> dev
 if len(sys.argv) == 1:
     print("Usage: avg.py number1 number2 ...", file=sys.stderr)
     print("Error: No numbers provided.", file=sys.stderr)
     sys.exit(1)
 
-<<<<<<< HEAD
 nums = []
 for n in sys.argv[1:]:
+total = 0.0
+count = 0
+
+for arg in sys.argv[1:]:
     try:
-        nums.append(float(n))
+        total += float(arg)
+        count += 1
     except ValueError:
-        print(f"Error: '{n}' is not a valid number.", file=sys.stderr)
+        print(f"Error: '{arg}' is not a valid number.", file=sys.stderr)
         sys.exit(1)
 
 avg = sum(nums) / len(nums)
 print(avg)
-=======
 total = 0.0
 count = 0
 
@@ -38,4 +37,4 @@ for arg in sys.argv[1:]:
         sys.exit(1)
 
 print(total / count)
->>>>>>> dev
+
