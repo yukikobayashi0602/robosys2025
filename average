@@ -10,21 +10,6 @@ if len(sys.argv) == 1:
     print("Error: No numbers provided.", file=sys.stderr)
     sys.exit(1)
 
-nums = []
-for n in sys.argv[1:]:
-total = 0.0
-count = 0
-
-for arg in sys.argv[1:]:
-    try:
-        total += float(arg)
-        count += 1
-    except ValueError:
-        print(f"Error: '{arg}' is not a valid number.", file=sys.stderr)
-        sys.exit(1)
-
-avg = sum(nums) / len(nums)
-print(avg)
 total = 0.0
 count = 0
 
